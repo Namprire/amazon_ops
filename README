@@ -1,0 +1,8 @@
+📁 mcdm-career-tool/
+├── ahp.py             # AHP matrix logic (weights)
+├── topsis.py          # Final score ranking
+├── discount.py        # Discounting function
+├── ui_app.py          # Streamlit interface
+├── test_data.json     # Sample inputs
+├── results.png        # Sample plot
+└── README.md          # Usage instructions
