@@ -1,16 +1,17 @@
 import numpy as np
 from pymcdm.methods import TOPSIS
 from pymcdm.helpers import rrankdata
-from pymcdm.weights import AHP
 
 
 def build_ahp_weights(pairwise_matrix):
     """
-    Compute AHP weights using a pairwise comparison matrix.
+    Compute AHP weights using the principal eigenvector method.
     """
-    model = AHP()
-    weights = model(pairwise_matrix)
-    return weights
+    eigvals, eigvecs = np.linalg.eig(pairwise_matrix)
+    max_index = np.argmax(np.real(eigvals))
+    weights = np.real(eigvecs[:, max_index])
+    normalized_weights = weights / np.sum(weights)
+    return normalized_weights
 
 
 def apply_time_discounting(weights, discount_rate):
