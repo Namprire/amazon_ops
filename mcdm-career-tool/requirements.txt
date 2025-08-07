@@ -1,0 +1,12 @@
+# ---- Core UI & plotting ----
+streamlit>=1.34      # app framework
+matplotlib>=3.8      # radar / bar charts
+
+# ---- Data handling ----
+pandas>=2.2
+numpy>=1.26
+
+# ---- MCDM library (AHP / TOPSIS) ----
+pymcdm>=1.0
+
+# (mcdm_utils is your own .py helper, so no pip install needed)
